@@ -6,9 +6,9 @@ import com.cmg.model.PostOffice;
 import com.cmg.model.UserForm;
 
 public interface BasicServiceInterface {
-	public List<UserForm> getFormSubmissionData(List<UserForm> data);
+	public List<UserForm> getFormSubmissionData();
 	
-	public void setFormSubmissionData();
+	public void setFormSubmissionData(List<UserForm> data);
 	
 	public List<PostOffice> getPostOfficeData();
 	

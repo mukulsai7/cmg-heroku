@@ -7,6 +7,7 @@ public class UserForm {
 	private String profession;
 	private String ministryOrDept;
 	private String suggestionOrIssueText;
+	private String submissionType;
 	public String getName() {
 		return name;
 	}
@@ -42,6 +43,12 @@ public class UserForm {
 	}
 	public void setSuggestionOrIssueText(String suggestionOrIssueText) {
 		this.suggestionOrIssueText = suggestionOrIssueText;
+	}
+	public String getSubmissionType() {
+		return submissionType;
+	}
+	public void setSubmissionType(String submissionType) {
+		this.submissionType = submissionType;
 	}
 	
 }

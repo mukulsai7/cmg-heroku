@@ -7,18 +7,18 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
 import com.cmg.model.PostOffice;
+import com.cmg.service.BasicServiceImplementation;
 
 @Component
 public class ApiHelper {
-	public void setPostOffice(){
-
-	}
-
-	public List<PostOffice> getPostOfficeData(String zipCode) throws ParseException{
+@Autowired 
+BasicServiceImplementation basicServiceImplementation;
+	public List<PostOffice> establishPostOfficeData(String zipCode) throws ParseException{
 		final String uri = "https://api.postalpincode.in/pincode/"+zipCode;
 		RestTemplate restTemplate = new RestTemplate();
 		String result = restTemplate.getForObject(uri, String.class);
@@ -38,6 +38,7 @@ public class ApiHelper {
 			postOffice.setDistrict((String)val.get("Circle"));
 			postOfficeList.add(postOffice);
 		}
+		basicServiceImplementation.setPostOfficeData(postOfficeList);
 		return postOfficeList;
 	}
 }

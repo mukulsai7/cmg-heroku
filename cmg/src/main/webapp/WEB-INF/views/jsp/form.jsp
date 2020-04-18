@@ -21,8 +21,8 @@
 					</div>
 					<div class="form-group">
 						<label for="phone">Email/Phone:</label> <input type="text"
-							class="form-control number" id="phone"
-							placeholder="We may get back to you.." name="phone" required>
+							class="form-control number" id="contact"
+							placeholder="We may get back to you.." name="contact" required>
 					</div>
 					<div class="form-group">
 						<label for="name">Area of concern zipcode</label> <input
@@ -38,11 +38,11 @@
 					</div>
 
 					<div class="form-group">
-						<label for="profession">Profession</label> <select id="profession"
+						<label for="profession">Profession</label> <select id="profession" name="profession"
 							class="form-control radio" required>
 							<option value="">Choose...</option>
-							<option value="government employee">Government employee</option>
-							<option value="private employee">Private employee</option>
+							<option value="governmentEmployee">Government employee</option>
+							<option value="privateEmployee">Private employee</option>
 							<option value="student">Student</option>
 						</select>
 					</div>
@@ -54,7 +54,7 @@
 
 					<div class="form-group">
 						<label for="profession">Select ministry/department</label> <select
-							id="ministry" class="form-control radio" required>
+							name="ministryOrDept" id="ministryOrDept" class="form-control radio" required>
 							<option value="">Choose...</option>
 							<option value="covid19">Covid 19</option>
 							<option value="homeAffairs">Ministry of Home Affairs</option>
@@ -77,13 +77,13 @@
 					<div class="form-group">
 						<label for="comment">Please write your suggestion or issue
 							here:</label>
-						<textarea class="form-control" rows="5" id="comment" required></textarea>
+						<textarea class="form-control" rows="5" id="comment" name="suggestionOrIssueText" required></textarea>
 					</div>
 
 					<label class="radio-inline"><input type="radio"
-						name="submissionType" checked>Suggestion</label> <label
+						name="submissionType" value="suggestion" checked>Suggestion</label> <label
 						class="radio-inline"><input type="radio"
-						name="submissionType">Issue</label> </br>
+						name="submissionType" value="issue">Issue</label> </br>
 					<button type="submit" id="submit"
 						class="btn btn-primary btn-customized">Submit</button>
 					<!-- End input fields -->

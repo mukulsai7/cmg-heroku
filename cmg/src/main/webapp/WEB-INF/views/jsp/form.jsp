@@ -1,0 +1,135 @@
+<html>
+<head>
+<title>Step 1</title>
+<link href="webjars/bootstrap/4.4.1-1/css/bootstrap.min.css"
+	rel="stylesheet">
+</head>
+<body>
+	<div class="container h-100">
+		<div class="row h-100 justify-content-center align-items-center">
+			<div class="col-10 col-md-8 col-lg-6">
+				<!-- Form -->
+				<form class="form-example" action="submitText" method="post">
+					<h1>Common man to government</h1>
+					<p class="description">Send your suggestions and issues to the
+						government seamlessly</p>
+					<!-- Input fields -->
+					<div class="form-group">
+						<label for="name">Name:</label> <input type="text"
+							class="form-control username" id="name" placeholder="Name..."
+							name="name" required>
+					</div>
+					<div class="form-group">
+						<label for="phone">Email/Phone:</label> <input type="text"
+							class="form-control number" id="phone"
+							placeholder="We may get back to you.." name="phone" required>
+					</div>
+					<div class="form-group">
+						<label for="name">Area of concern zipcode</label> <input
+							type="text" class="form-control email" id="zipcode"
+							placeholder="Action will be taken in this area.." name="zipcode"
+							required>
+					</div>
+
+					<div class="form-group">
+						<label for="area">Area</label> <select id="area" name="area"
+							class="form-control radio" required>
+						</select>
+					</div>
+
+					<div class="form-group">
+						<label for="profession">Profession</label> <select id="profession"
+							class="form-control radio" required>
+							<option value="">Choose...</option>
+							<option value="government employee">Government employee</option>
+							<option value="private employee">Private employee</option>
+							<option value="student">Student</option>
+						</select>
+					</div>
+
+					<h1>COVID-19: Fight the global pandemic</h1>
+					<p class="description">Suggestions and issues that are related
+						to covid-19 are prioritized</p>
+					<!-- Input fields -->
+
+					<div class="form-group">
+						<label for="profession">Select ministry/department</label> <select
+							id="ministry" class="form-control radio" required>
+							<option value="">Choose...</option>
+							<option value="covid19">Covid 19</option>
+							<option value="homeAffairs">Ministry of Home Affairs</option>
+							<option value="labourAndEmployment">Ministry of Labour
+								and Employment</option>
+							<option value="agricultureAndFarmersWelfare">Ministry of
+								Agriculture and Farmers Welfare</option>
+							<option value="finance">Ministry of Finance</option>
+							<option value="healthAndFamilyWelfare">Ministry of
+								Health and Family Welfare</option>
+							<option value="lawAndJustice">Ministry of Law and
+								Justice</option>
+							<option value="skillDevelopmentAndEntrepreneurship">Ministry
+								of Skill Development and Entrepreneurship</option>
+
+
+						</select>
+					</div>
+
+					<div class="form-group">
+						<label for="comment">Please write your suggestion or issue
+							here:</label>
+						<textarea class="form-control" rows="5" id="comment" required></textarea>
+					</div>
+
+					<label class="radio-inline"><input type="radio"
+						name="submissionType" checked>Suggestion</label> <label
+						class="radio-inline"><input type="radio"
+						name="submissionType">Issue</label> </br>
+					<button type="submit" id="submit"
+						class="btn btn-primary btn-customized">Submit</button>
+					<!-- End input fields -->
+				</form>
+				<!-- Form end -->
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
+
+<style type="text/css">
+body {
+	background-image:
+		url("https://springfieldeducation.org/wp-content/uploads/2018/07/plain-blue-background.jpg");
+	background-color: #cccccc;
+}
+</style>
+
+<script>
+	var zipCodeValue = document.getElementById("zipcode");
+	zipcode.addEventListener("blur", function() {
+		var ourData = "";
+		var options = "";
+		document.getElementById("area").innerHTML = options;
+		console.log('entered into ..');
+		console.log(zipCodeValue.value);
+		var ourRequest = new XMLHttpRequest();
+		ourRequest.open('GET', "https://api.postalpincode.in/pincode/"
+				.concat(zipCodeValue.value));
+		ourRequest.onload = function() {
+			ourData = JSON.parse(ourRequest.responseText);
+			console.log(ourData[0].PostOffice[0].Name);
+			for (var i = 0; i < ourData[0].PostOffice.length; i++) {
+				options += "<option>" + ourData[0].PostOffice[i].Name
+						+ "</option>";
+			}
+			document.getElementById("area").innerHTML = options;
+
+		};
+		ourRequest.send();
+
+	});
+
+	function getAjaxData() {
+		return ourData;
+	}
+</script>

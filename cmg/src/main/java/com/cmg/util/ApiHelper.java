@@ -22,7 +22,7 @@ BasicServiceImplementation basicServiceImplementation;
 		final String uri = "https://api.postalpincode.in/pincode/"+zipCode;
 		RestTemplate restTemplate = new RestTemplate();
 		String result = restTemplate.getForObject(uri, String.class);
-		System.out.println(result);
+		//System.out.println(result);
 		JSONParser parser = new JSONParser();
 		JSONArray intialJsonArray = (JSONArray) parser.parse(result);
 		JSONObject objectInArray = (JSONObject) intialJsonArray.get(0);
@@ -30,7 +30,7 @@ BasicServiceImplementation basicServiceImplementation;
 		List<PostOffice> postOfficeList = new ArrayList<PostOffice>();
 		for(int i=0;i<finalJsonArray.size();i++){
 			JSONObject val = (JSONObject) finalJsonArray.get(i);
-			System.out.println(val.get("Name"));
+			//System.out.println(val.get("Name"));
 			PostOffice postOffice = new PostOffice();
 			postOffice.setArea((String)val.get("Name"));
 			postOffice.setCity((String)val.get("Division"));

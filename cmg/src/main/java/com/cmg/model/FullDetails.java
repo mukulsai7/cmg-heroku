@@ -1,6 +1,9 @@
 package com.cmg.model;
 
-public class PostOffice {
+import org.springframework.stereotype.Component;
+
+@Component
+public class FullDetails extends UserForm{
 	private String state;
 	private String district;
 	private String city;
@@ -37,4 +40,9 @@ public class PostOffice {
 		this.area = area;
 	}
 	
+	@Override
+	public String toString(){
+		return "name : "+super.getName()+"contact : "+super.getContact()+" /area : "+this.area+" /submitted text : "+super.getSuggestionOrIssueText();
+		
+	}
 }

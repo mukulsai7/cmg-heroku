@@ -4,6 +4,7 @@ public class UserForm {
 	private String name;
 	private String contact;
 	private String zipcode;
+	private String area;
 	private String profession;
 	private String ministryOrDept;
 	private String suggestionOrIssueText;
@@ -49,6 +50,12 @@ public class UserForm {
 	}
 	public void setSubmissionType(String submissionType) {
 		this.submissionType = submissionType;
+	}
+	public String getArea() {
+		return area;
+	}
+	public void setArea(String area) {
+		this.area = area;
 	}
 	
 }

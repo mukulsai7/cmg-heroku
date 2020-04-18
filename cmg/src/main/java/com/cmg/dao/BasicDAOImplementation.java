@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.cmg.model.FullDetails;
 import com.cmg.model.PostOffice;
 import com.cmg.model.UserForm;
 import com.cmg.util.ApiHelper;
@@ -35,7 +36,12 @@ public class BasicDAOImplementation implements BasicDAOInterface{
 	}
 
 	public void setPostOfficeData(List<PostOffice> data) {
+		
+	}
 
+	public void setMasterTableData(FullDetails data) {
+		// TODO Auto-generated method stub
+		//write your queries here
 	}
 
 }

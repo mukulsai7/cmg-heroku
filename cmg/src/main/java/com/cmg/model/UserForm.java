@@ -19,12 +19,15 @@ public class UserForm {
 	
 	@Column(name="zipcode")
 	private String zipcode;
+
 	
 	@ManyToOne
 	@JoinColumn(name="area")
 	private PostOffice postOffice;
 	
 	@Column(name="profession")
+
+
 	private String profession;
 	
 	@Column(name="ministryordepartment")
@@ -116,9 +119,9 @@ public class UserForm {
 
 	public void setSubmissionType(String submissionType) {
 		this.submissionType = submissionType;
-	}	
-	
-	
+
+	}
+
 	
 	
 	}

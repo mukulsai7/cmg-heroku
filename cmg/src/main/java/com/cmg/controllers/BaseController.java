@@ -10,9 +10,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.cmg.dao.BasicDAOImplementation;
+import com.cmg.model.FullDetails;
 import com.cmg.model.UserForm;
 import com.cmg.service.BasicServiceImplementation;
-import com.cmg.util.ApiHelper;
+import com.cmg.util.DataTransactionUtil;
 
 @Controller
 public class BaseController{
@@ -21,10 +22,10 @@ public class BaseController{
 	BasicDAOImplementation BasicDaoImplementation; 
 	
 	@Autowired
-	ApiHelper apiHelper;
+	BasicServiceImplementation basicServiceImplementation;
 	
 	@Autowired
-	BasicServiceImplementation basicServiceImplementation;
+	DataTransactionUtil dataTransactionUtil; 
 	
 	static Logger log = Logger.getLogger(BaseController.class.getName());
 	
@@ -33,9 +34,9 @@ public class BaseController{
 	@RequestMapping(value="/submitText", method=RequestMethod.POST)
 	public String submitText(UserForm userForm) throws ParseException{
 		log.info("submitText START");
-		apiHelper.establishPostOfficeData(userForm.getZipcode());
-		basicServiceImplementation.setFormSubmissionData(userForm);
-		userFormList = basicServiceImplementation.getFormSubmissionData();
+		FullDetails fullDetails = dataTransactionUtil.getFullDetails(userForm);
+		log.info(fullDetails);
+		basicServiceImplementation.setMasterTableData(fullDetails);
 	    		return "submitted";
 	} 
 	@RequestMapping(value="/form")

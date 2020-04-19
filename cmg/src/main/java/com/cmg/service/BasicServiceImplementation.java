@@ -43,10 +43,17 @@ public class BasicServiceImplementation implements BasicServiceInterface{
 		// TODO Auto-generated method stub
 		basicDAOImplementation.setPostOfficeData(data);
 	}
-
+	
+	@Override
 	public void setMasterTableData(FullDetails data) {
 		// TODO Auto-generated method stub
 		basicDAOImplementation.setMasterTableData(data);
+	}
+
+	@Override
+	public List<FullDetails> getMasterTableData() {
+		// TODO Auto-generated method stub
+		return (List<FullDetails>) basicDAOImplementation.getMasterTableData();
 	}
 
 

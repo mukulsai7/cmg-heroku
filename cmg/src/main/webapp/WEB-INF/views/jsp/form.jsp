@@ -16,7 +16,6 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js">
 </script>
 </head>
-</head>
 <body>
 	<div class="container h-100">
 		<div class="row h-100 justify-content-center align-items-center">
@@ -71,17 +70,22 @@
 							class="form-control radio" required>
 							<option value="">Choose...</option>
 							<option value="covid19">Covid 19</option>
-							<option value="homeAffairs">Ministry of Home Affairs</option>
-							<option value="labourAndEmployment">Ministry of Labour
+							<option value="Ministry of Home Affairs">Ministry of Home Affairs</option>
+							<option value="Ministry of Labour
+								and Employment">Ministry of Labour
 								and Employment</option>
-							<option value="agricultureAndFarmersWelfare">Ministry of
+							<option value="Ministry of
+								Agriculture and Farmers Welfare">Ministry of
 								Agriculture and Farmers Welfare</option>
-							<option value="finance">Ministry of Finance</option>
-							<option value="healthAndFamilyWelfare">Ministry of
+							<option value="Ministry of Finance">Ministry of Finance</option>
+							<option value="Ministry of
+								Health and Family Welfare">Ministry of
 								Health and Family Welfare</option>
-							<option value="lawAndJustice">Ministry of Law and
+							<option value="Ministry of Law and
+								Justice">Ministry of Law and
 								Justice</option>
-							<option value="skillDevelopmentAndEntrepreneurship">Ministry
+							<option value="Ministry
+								of Skill Development and Entrepreneurship">Ministry
 								of Skill Development and Entrepreneurship</option>
 
 
@@ -96,9 +100,9 @@
 					</div>
 
 					<label class="radio-inline"><input type="radio"
-						name="submissionType" value="suggestion" checked>Suggestion</label>
+						name="submissionType" value="Suggestion" checked>Suggestion</label>
 					<label class="radio-inline"><input type="radio"
-						name="submissionType" value="issue">Issue</label> </br>
+						name="submissionType" value="Issue">Issue</label> </br>
 					<button type="submit" id="submit"
 						class="btn btn-primary btn-customized">Submit</button>
 					<!-- End input fields -->

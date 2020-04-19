@@ -44,11 +44,14 @@ public class BasicDAOImplementation implements BasicDAOInterface{
 	}
 
 	public void setMasterTableData(FullDetails data) {
-		hibernateConfiguration.getHibernateSession().save(data);
-		hibernateConfiguration.commitTransaction();
+		HibernateConfiguration.getHibernateSession().save(data);
+		HibernateConfiguration.commitTransaction();
 	}
 	
-	public void getMasterTableData() {
+	public List<?> getMasterTableData() {
+		List<FullDetails> fullDetailsList = HibernateConfiguration.getHibernateSession().createCriteria(FullDetails.class).list(); 
+		HibernateConfiguration.commitTransaction();
+		return fullDetailsList;
 
 	}
 

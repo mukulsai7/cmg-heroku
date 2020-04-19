@@ -18,7 +18,7 @@ public class BasicDAOImplementation implements BasicDAOInterface{
 	ApiHelper apiHelper;
 	
 	 List<UserForm> userFormList = new ArrayList<UserForm>();
-	
+	 
 	public List<UserForm> getFormSubmissionData() {
 		return userFormList;
 	}
@@ -40,6 +40,11 @@ public class BasicDAOImplementation implements BasicDAOInterface{
 	}
 
 	public void setMasterTableData(FullDetails data) {
+		// TODO Auto-generated method stub
+		//write your queries here
+	}
+	
+	public void getMasterTableData() {
 		// TODO Auto-generated method stub
 		//write your queries here
 	}

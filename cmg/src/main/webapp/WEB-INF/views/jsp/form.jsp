@@ -1,8 +1,21 @@
 <html>
 <head>
 <title>Step 1</title>
-<link href="webjars/bootstrap/4.4.1-1/css/bootstrap.min.css"
-	rel="stylesheet">
+<!-- <link href="webjars/bootstrap/4.4.1-1/css/bootstrap.min.css"
+	rel="stylesheet"> -->
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js">
+</script>
+</head>
 </head>
 <body>
 	<div class="container h-100">
@@ -38,8 +51,8 @@
 					</div>
 
 					<div class="form-group">
-						<label for="profession">Profession</label> <select id="profession" name="profession"
-							class="form-control radio" required>
+						<label for="profession">Profession</label> <select id="profession"
+							name="profession" class="form-control radio" required>
 							<option value="">Choose...</option>
 							<option value="governmentEmployee">Government employee</option>
 							<option value="privateEmployee">Private employee</option>
@@ -54,7 +67,8 @@
 
 					<div class="form-group">
 						<label for="profession">Select ministry/department</label> <select
-							name="ministryOrDept" id="ministryOrDept" class="form-control radio" required>
+							name="ministryOrDept" id="ministryOrDept"
+							class="form-control radio" required>
 							<option value="">Choose...</option>
 							<option value="covid19">Covid 19</option>
 							<option value="homeAffairs">Ministry of Home Affairs</option>
@@ -77,12 +91,13 @@
 					<div class="form-group">
 						<label for="comment">Please write your suggestion or issue
 							here:</label>
-						<textarea class="form-control" rows="5" id="comment" name="suggestionOrIssueText" required></textarea>
+						<textarea class="form-control" rows="5" id="comment"
+							name="suggestionOrIssueText" required></textarea>
 					</div>
 
 					<label class="radio-inline"><input type="radio"
-						name="submissionType" value="suggestion" checked>Suggestion</label> <label
-						class="radio-inline"><input type="radio"
+						name="submissionType" value="suggestion" checked>Suggestion</label>
+					<label class="radio-inline"><input type="radio"
 						name="submissionType" value="issue">Issue</label> </br>
 					<button type="submit" id="submit"
 						class="btn btn-primary btn-customized">Submit</button>

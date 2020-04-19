@@ -1,10 +1,10 @@
 package com.cmg.model;
-//POLICE
+
 public class PostOffice {
 	private String state;
 	private String district;
 	private String city;
-	private String area; //pk
+	private String area; 
 
 	public String getState() {
 		return state;

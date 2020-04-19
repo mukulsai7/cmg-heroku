@@ -16,11 +16,10 @@ public class DataTransactionUtil {
 	@Autowired
 	ApiHelper apiHelper;
 
-	@Autowired
-	FullDetails fullDetails;
 
 	public FullDetails getFullDetails(UserForm userForm) throws ParseException{
 		List<PostOffice> postOfficeList = apiHelper.establishPostOfficeData(userForm.getZipcode());
+		FullDetails fullDetails = new FullDetails();
 		for(int i=0;i<postOfficeList.size();i++){
 			if(postOfficeList.get(i).getArea().equals(userForm.getArea())){
 				fullDetails.setState(postOfficeList.get(i).getState());
@@ -33,6 +32,7 @@ public class DataTransactionUtil {
 				fullDetails.setSubmissionType(userForm.getSubmissionType());
 				fullDetails.setSuggestionOrIssueText(userForm.getSuggestionOrIssueText());
 				fullDetails.setMinistryOrDept(userForm.getMinistryOrDept());
+				fullDetails.setZipcode(userForm.getZipcode());
 			}
 		}
 		return fullDetails;

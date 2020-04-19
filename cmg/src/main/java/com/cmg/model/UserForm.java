@@ -1,14 +1,10 @@
 package com.cmg.model;
-import javax.persistence.Entity;
-import javax.persistence.Table;
-//USER
-@Entity
-@Table(name="userform")
+
 public class UserForm {
 	private String name;
 	private String contact;
 	private String zipcode;
-	private String area; //fk
+	private String area; 
 	private String profession;
 	private String ministryOrDept;
 	private String suggestionOrIssueText;

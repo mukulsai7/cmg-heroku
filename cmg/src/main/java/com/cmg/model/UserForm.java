@@ -31,6 +31,12 @@ public class UserForm {
 	public void setZipcode(String zipcode) {
 		this.zipcode = zipcode;
 	}
+	public String getArea() {
+		return area;
+	}
+	public void setArea(String area) {
+		this.area = area;
+	}
 	public String getProfession() {
 		return profession;
 	}
@@ -55,5 +61,6 @@ public class UserForm {
 	public void setSubmissionType(String submissionType) {
 		this.submissionType = submissionType;
 	}
+	
 	
 }

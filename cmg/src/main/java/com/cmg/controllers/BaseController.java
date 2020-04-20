@@ -40,15 +40,22 @@ public class BaseController{
 		basicServiceImplementation.setMasterTableData(fullDetails);
 	    		return "submitted";
 	} 
+	
 	@RequestMapping(value="/form")
 	public String form(){
 		return "form";
 	}
+	
 	@RequestMapping(value="/viewIssues")
 	public String viewIssues(ModelMap modelMap){
 		List<FullDetails> fullDetailsList = basicServiceImplementation.getMasterTableData();
 		modelMap.addAttribute("fullDetailsList", fullDetailsList);
 		return "viewIssues";
+	}
+	
+	@RequestMapping(value="/home")
+	public String home(ModelMap modelMap){
+		return "index";
 	}
 
 }

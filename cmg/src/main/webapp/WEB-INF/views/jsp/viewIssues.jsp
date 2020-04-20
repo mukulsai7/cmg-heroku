@@ -19,6 +19,7 @@
 <!-- Latest compiled JavaScript -->
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js">
+	
 </script>
 
 <!--  data tables -->
@@ -29,73 +30,86 @@
 
 </head>
 <body>
-
-	<table id="example" class="display" style="width: 100%">
-		<thead>
-			<tr>
-				<th>State</th>
-				<th>District</th>
-				<th>Area</th>
-				<th>Type</th>
-				<th>Info</th>
-			</tr>
-		</thead>
-		<tbody>
-			<%ArrayList<FullDetails> fullDetailsList =  
-            (ArrayList<FullDetails>)request.getAttribute("fullDetailsList"); 
-        for(FullDetails i:fullDetailsList){%>
-			<%-- Arranging data in tabular form 
+	<div class="topcorner">
+		<a href="<%=request.getContextPath()%>/home" class="btn btn-link"
+			id="homeButton" role="button" aria-pressed="true">Home</a>
+	</div>
+	<div id="table">
+		<table id="example" class="display" style="width: 100%">
+			<thead>
+				<tr>
+					<th>State</th>
+					<th>District</th>
+					<th>Area</th>
+					<th>Type</th>
+					<th>Dept</th>
+					<th>Info</th>
+				</tr>
+			</thead>
+			<tbody>
+				<%
+					ArrayList<FullDetails> fullDetailsList = (ArrayList<FullDetails>) request.getAttribute("fullDetailsList");
+					for (FullDetails i : fullDetailsList) {
+				%>
+				<%-- Arranging data in tabular form 
         --%>
-			<tr>
-				<td><%=i.getState()%></td>
-				<td><%=i.getDistrict()%></td>
-				<td><%=i.getArea()%></td>
-				<td><%=i.getSubmissionType()%></td>
-				<td><%=i.getSuggestionOrIssueText()%></td>
+				<tr>
+					<td><%=i.getState()%></td>
+					<td><%=i.getDistrict()%></td>
+					<td><%=i.getArea()%></td>
+					<td><%=i.getSubmissionType()%></td>
+					<td><%=i.getMinistryOrDept()%></td>
+					<td><%=i.getSuggestionOrIssueText()%></td>
 
-			</tr>
-			<%}%>
+				</tr>
+				<%
+					}
+				%>
 
-		</tbody>
-	</table>
-
+			</tbody>
+		</table>
+	</div>
 </body>
 </html>
 
 <style type="text/css">
 body {
 	background-image:
-		url("https://springfieldeducation.org/wp-content/uploads/2018/07/plain-blue-background.jpg");
-	background-color: #cccccc;
+		/* 		url("https://springfieldeducation.org/wp-content/uploads/2018/07/plain-blue-background.jpg");
+ */ background-color : #cccccc;
 }
+
+.topcorner {
+	position: absolute; top : 10px;
+	right: 10px;
+	top: 10px;
+}
+
+#table {
+margin-top:50px;	
+}
+
 </style>
 
 <script>
-function filterGlobal () {
-    $('#example').DataTable().search(
-        $('#global_filter').val(),
-        $('#global_regex').prop('checked'),
-        $('#global_smart').prop('checked')
-    ).draw();
-}
- 
-function filterColumn ( i ) {
-    $('#example').DataTable().column( i ).search(
-        $('#col'+i+'_filter').val(),
-        $('#col'+i+'_regex').prop('checked'),
-        $('#col'+i+'_smart').prop('checked')
-    ).draw();
-}
- 
-$(document).ready(function() {
-    $('#example').DataTable();
- 
-    $('input.global_filter').on( 'keyup click', function () {
-        filterGlobal();
-    } );
- 
-    $('input.column_filter').on( 'keyup click', function () {
-        filterColumn( $(this).parents('tr').attr('data-column') );
-    } );
-} );
+	function filterGlobal() {
+		$('#example').DataTable().search($('#global_filter').val()).draw();
+	}
+
+	function filterColumn(i) {
+		$('#example').DataTable().column(i).search(
+				$('#col' + i + '_filter').val()).draw();
+	}
+
+	$(document).ready(function() {
+		$('#example').DataTable();
+
+		$('input.global_filter').on('keyup click', function() {
+			filterGlobal();
+		});
+
+		$('input.column_filter').on('keyup click', function() {
+			filterColumn($(this).parents('tr').attr('data-column'));
+		});
+	});
 </script>

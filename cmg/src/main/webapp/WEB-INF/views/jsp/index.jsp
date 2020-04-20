@@ -3,8 +3,6 @@
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
 <head>
 <title>Step 1</title>
-<!-- <link href="webjars/bootstrap/4.4.1-1/css/bootstrap.min.css"
-	rel="stylesheet"> -->
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">

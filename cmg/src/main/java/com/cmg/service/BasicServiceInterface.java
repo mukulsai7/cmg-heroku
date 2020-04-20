@@ -16,4 +16,6 @@ public interface BasicServiceInterface {
 	public void setPostOfficeData(List<PostOffice> data);
 
 	public void setMasterTableData(FullDetails data);
+	
+	public List<FullDetails> getMasterTableData();
 }

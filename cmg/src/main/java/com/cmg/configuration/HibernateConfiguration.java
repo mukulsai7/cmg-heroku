@@ -11,10 +11,11 @@ import com.cmg.model.FullDetails;
 
 @Component
 public class HibernateConfiguration {
-	private Configuration configuration;
-	private SessionFactory sessionFactory;
-	private Session session;
-	public Session getHibernateSession(){
+	private static Configuration configuration;
+	private static SessionFactory sessionFactory;
+	private static Session session;
+	
+	public static Session getHibernateSession(){
 		try{
 			configuration = new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(FullDetails.class);
 			sessionFactory = configuration.buildSessionFactory();
@@ -26,10 +27,9 @@ public class HibernateConfiguration {
 		return null;
 	}
 	
-	public void commitTransaction(){
+	public static void commitTransaction(){
 		Transaction transaction = session.beginTransaction();
 		transaction.commit();
 	}
-
-
+	
 }

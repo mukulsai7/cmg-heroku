@@ -22,24 +22,27 @@
 </script>
 </head>
 <body>
-		<div class="container h-100">
-			<div class="row h-100 justify-content-center align-items-center">
-				<div class="col-10 col-md-8 col-lg-6">
+	<div class="container h-100">
+		<div class="row h-100 justify-content-center align-items-center">
+			<div class="col-10 col-md-8 col-lg-6">
 				<form class="form-example" action="next" method="post">
 					<h3>Please select volunteer type and location</h3>
 					<div class="form-group">
-					<label for="volunteerType">Select volunteer type</label> <select
-						name="volunteerType" id="volunteerType" class="form-control radio"
-						required>
-						<option value="">Choose...</option>
-						<option value="Food support">Food support</option>
-						<option value="Financial support">Financial support</option>
-						<option value="Medical support">Medical support</option>
-						<option value="Psychological support">Psychological
-							support</option>
-					</select>
+						<label for="volunteerType">Select volunteer type</label> <select
+							name="volunteerType" id="volunteerType"
+							class="form-control radio" required>
+							<option value="">Choose...</option>
+							<option value="Food support">Food support</option>
+							<option value="Financial support">Financial support</option>
+							<option value="Medical support">Medical support</option>
+							<option value="Need Masks">Need Masks</option>
+							<option value="Job assistance">Need daily essentials</option>
+							<option value="Job assistance">Job assistance</option>
+							<option value="Psychological support">Psychological
+								support</option>
+						</select>
 					</div>
-					 <p></p> 
+					<p></p>
 
 					<div class="form-group">
 						<label for="state">Select state</label> <select name="state"
@@ -47,23 +50,27 @@
 							<option value="">Choose...</option>
 
 							<%
-						ArrayList<String> stateList = (ArrayList<String>) request.getAttribute("stateList");
-						for (String state : stateList) {
+								ArrayList<String> stateList = (ArrayList<String>) request.getAttribute("stateList");
+								for (String state : stateList) {
 							%>
-							<%String s = state; %>
+							<%
+								String s = state;
+							%>
 							<option value=<%=s%>><%=s%></option>
 							<%
-						}
-					%>
+								}
+							%>
 						</select>
 					</div>
-					
-				<button type="submit" id="submit" class="btn btn-primary btn-customized">Next</button>
-				<a href="<%=request.getContextPath()%>/home" class="btn btn-outline-secondary"
-			id="homeButton" role="button" aria-pressed="true">Home</a>
-					</form>
-					</br>
-					
+
+					<button type="submit" id="submit"
+						class="btn btn-primary btn-customized">Next</button>
+					<a href="<%=request.getContextPath()%>/home"
+						class="btn btn-outline-secondary" id="homeButton" role="button"
+						aria-pressed="true">Home</a>
+				</form>
+				</br>
+
 			</div>
 		</div>
 	</div>

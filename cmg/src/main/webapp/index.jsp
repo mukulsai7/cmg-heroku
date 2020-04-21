@@ -15,22 +15,29 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </head>
-<body>
-	<div class="container h-100">
-		<div class="row h-100 justify-content-center align-items-center">
-			<div class="col-10 col-md-8 col-lg-6">
-				<div class="form-group">
-					<h1>COVID-19: Fight the global pandemic</h1>
-					<a href="<%=request.getContextPath()%>/form"
-						class="btn btn-primary btn-lg active" id="submitButton"
-						role="button" aria-pressed="true">I need support</a> <br /> <a
-						href="<%=request.getContextPath()%>/volunteer"
-						class="btn btn-primary btn-lg active" id="viewButton"
-						role="button" aria-pressed="true">I can volunteer</a>
+<div class="container h-100">
+	<div class="row h-100 justify-content-center align-items-center">
+
+		<div class="col-10 col-md-8 col-lg-6">
+			<form class="form-example" action="" method="post">
+				<div class="d-flex justify-content-center">
+					<h3>Community collaboration</h3>
 				</div>
-			</div>
+				<div class="d-flex justify-content-center">
+					<p>Our objective is to provide cooperation at the local level and enable effective utilisation of resources during this pandemic</p>
+				</div>
+				<a href="<%=request.getContextPath()%>/form"
+					class="btn btn-primary btn-lg active" id="submitButton"
+					role="button" aria-pressed="true">I need support</a> <br /> <a
+					href="<%=request.getContextPath()%>/volunteer"
+					class="btn btn-primary btn-lg active" id="viewButton" role="button"
+					aria-pressed="true">I can volunteer</a>
+					
+				</form>
 		</div>
 	</div>
+</div>
+</div>
 </body>
 </html>
 

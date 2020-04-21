@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>View issues/suggestions</title>
+<title>Volunteering</title>
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
@@ -36,9 +36,13 @@
 		<a href="<%=request.getContextPath()%>/home" class="btn btn-link"
 			id="homeButton" role="button" aria-pressed="true">Home</a>
 	</div>
-	<div id="table">
-		<table id="example" class="display" style="width: 100%">
-			<thead>
+	<div class="table-responsive">
+	<p></p>
+	<h3>List of people who need support</h3>
+	<p></p>
+		<table id="example" class="table table-bordered table-hover table-sm" style="width: 100%">
+		  <caption>Please change the status only if an action is taken by a volunteer</caption>
+			<thead class="thead-dark">
 				<tr>
 					<th>City</th>
 					<th>Area</th>
@@ -75,7 +79,7 @@
 							<option value="closed">Closed</option>
 						</select>
 						<button type="submit" id="submit"
-									class="">Submit status</button>
+									class="btn btn-secondary btn-sm">Submit status</button>
 							</form>
 						</div>
 					</td>
@@ -111,7 +115,7 @@ body {
 </style>
 
 <script>
-	function filterGlobal() {
+/* 	function filterGlobal() {
 		$('#example').DataTable().search($('#global_filter').val()).draw();
 	}
 
@@ -130,5 +134,5 @@ body {
 		$('input.column_filter').on('keyup click', function() {
 			filterColumn($(this).parents('tr').attr('data-column'));
 		});
-	});
+	}); */
 </script>

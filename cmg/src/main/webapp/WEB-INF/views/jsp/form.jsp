@@ -24,7 +24,7 @@
 				<!-- Form -->
 				<form class="form-example" action="submitText" method="post">
 					<h1>Covid 19 support form</h1>
-					<p class="description">A volunteer may help the person
+					<p class="description">A volunteer may help the person(s)
 						mentioned in this form</p>
 					<!-- Input fields -->
 					<div class="form-group">
@@ -59,6 +59,9 @@
 							<option value="Food support">Food support</option>
 							<option value="Financial support">Financial support</option>
 							<option value="Medical support">Medical support</option>
+							<option value="Need Masks">Need Masks</option>
+							<option value="Job assistance">Need daily essentials</option>
+							<option value="Job assistance">Job assistance</option>
 							<option value="Psychological support">Psychological
 								support</option>
 						</select>

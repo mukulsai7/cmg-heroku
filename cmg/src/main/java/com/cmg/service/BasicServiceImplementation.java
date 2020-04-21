@@ -55,6 +55,15 @@ public class BasicServiceImplementation implements BasicServiceInterface{
 		// TODO Auto-generated method stub
 		return (List<FullDetails>) basicDAOImplementation.getMasterTableData();
 	}
+	
+	public List<FullDetails> getMasterTableData(String state, String volunteerType) {
+		// TODO Auto-generated method stub
+		return (List<FullDetails>) basicDAOImplementation.getMasterTableData(state,volunteerType);
+	}
+	
+	public void setStatus(int id, String string){
+		basicDAOImplementation.setStatus(id, string);
+	}
 
 
 }

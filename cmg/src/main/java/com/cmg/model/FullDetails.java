@@ -25,10 +25,9 @@ public class FullDetails implements Serializable{
 	private String name;
 	private String contact;
 	private String zipcode;
-	private String profession;
-	private String ministryOrDept;
-	private String suggestionOrIssueText;
-	private String submissionType;
+	private String supportType;
+	private String supportText;
+	private String status;
 	public String getName() {
 		return name;
 	}
@@ -53,31 +52,6 @@ public class FullDetails implements Serializable{
 	public void setArea(String area) {
 		this.area = area;
 	}
-	public String getProfession() {
-		return profession;
-	}
-	public void setProfession(String profession) {
-		this.profession = profession;
-	}
-	public String getMinistryOrDept() {
-		return ministryOrDept;
-	}
-	public void setMinistryOrDept(String ministryOrDept) {
-		this.ministryOrDept = ministryOrDept;
-	}
-	public String getSuggestionOrIssueText() {
-		return suggestionOrIssueText;
-	}
-	public void setSuggestionOrIssueText(String suggestionOrIssueText) {
-		this.suggestionOrIssueText = suggestionOrIssueText;
-	}
-	public String getSubmissionType() {
-		return submissionType;
-	}
-	public void setSubmissionType(String submissionType) {
-		this.submissionType = submissionType;
-	}
-	
 	public String getState() {
 		return state;
 	}
@@ -99,7 +73,7 @@ public class FullDetails implements Serializable{
 	
 	@Override
 	public String toString(){
-		return "name : "+this.getName()+"contact : "+this.getContact()+" /area : "+this.area+" /submitted text : "+this.getSuggestionOrIssueText();
+		return "name : "+this.getName()+"contact : "+this.getContact()+" /area : "+this.area+" /submitted text : "+this.getSupportText();
 		
 	}
 	public int getId() {
@@ -107,5 +81,23 @@ public class FullDetails implements Serializable{
 	}
 	public void setId(int id) {
 		this.id = id;
+	}
+	public String getSupportType() {
+		return supportType;
+	}
+	public void setSupportType(String supportType) {
+		this.supportType = supportType;
+	}
+	public String getSupportText() {
+		return supportText;
+	}
+	public void setSupportText(String supportText) {
+		this.supportText = supportText;
+	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
 	}
 }

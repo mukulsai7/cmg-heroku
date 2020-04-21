@@ -31,6 +31,8 @@
 </head>
 <body>
 	<div class="topcorner">
+	<a href="<%=request.getContextPath()%>/volunteer" class="btn btn-link"
+			id="backButton" role="button" aria-pressed="true">Back</a>
 		<a href="<%=request.getContextPath()%>/home" class="btn btn-link"
 			id="homeButton" role="button" aria-pressed="true">Home</a>
 	</div>
@@ -38,12 +40,13 @@
 		<table id="example" class="display" style="width: 100%">
 			<thead>
 				<tr>
-					<th>State</th>
-					<th>District</th>
+					<th>City</th>
 					<th>Area</th>
-					<th>Type</th>
-					<th>Dept</th>
-					<th>Info</th>
+					<th>Contact</th>
+					<th>Description</th>
+					<th>Current status</th>
+					<th>Change status</th>
+					<th></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -54,12 +57,28 @@
 				<%-- Arranging data in tabular form 
         --%>
 				<tr>
-					<td><%=i.getState()%></td>
-					<td><%=i.getDistrict()%></td>
+					<td><%=i.getCity()%></td>
 					<td><%=i.getArea()%></td>
-					<td><%=i.getSubmissionType()%></td>
-					<td><%=i.getMinistryOrDept()%></td>
-					<td><%=i.getSuggestionOrIssueText()%></td>
+					<td><%=i.getContact()%></td>
+					<td><%=i.getSupportText()%></td>
+					<td><%=i.getStatus()%></td>
+					<td>
+						<div class="container">
+							<form action="submitStatus" method="post">
+							 <input type="hidden" id="id" name="id" value=<%=i.getId()%>>
+							<label for="status"></label> <select
+							name="status" id="status" class=""
+							required>
+							<option value="">Choose...</option>
+							<option value="open">Open</option>
+							<option value="ongoing">Ongoing</option>
+							<option value="closed">Closed</option>
+						</select>
+						<button type="submit" id="submit"
+									class="">Submit status</button>
+							</form>
+						</div>
+					</td>
 
 				</tr>
 				<%
@@ -80,15 +99,15 @@ body {
 }
 
 .topcorner {
-	position: absolute; top : 10px;
+	position: absolute;
+	top: 10px;
 	right: 10px;
 	top: 10px;
 }
 
 #table {
-margin-top:50px;	
+	margin-top: 50px;
 }
-
 </style>
 
 <script>

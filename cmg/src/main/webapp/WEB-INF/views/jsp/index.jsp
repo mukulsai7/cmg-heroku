@@ -20,12 +20,13 @@
 		<div class="row h-100 justify-content-center align-items-center">
 			<div class="col-10 col-md-8 col-lg-6">
 				<div class="form-group">
+					<h1>COVID-19: Fight the global pandemic</h1>
 					<a href="<%=request.getContextPath()%>/form"
 						class="btn btn-primary btn-lg active" id="submitButton"
-						role="button" aria-pressed="true"> Submit issue</a> <br /> <a
-						href="<%=request.getContextPath()%>/viewIssues"
+						role="button" aria-pressed="true">I need support</a> <br /> <a
+						href="<%=request.getContextPath()%>/volunteer"
 						class="btn btn-primary btn-lg active" id="viewButton"
-						role="button" aria-pressed="true">View issues/suggestions </a>
+						role="button" aria-pressed="true">I can volunteer</a>
 				</div>
 			</div>
 		</div>

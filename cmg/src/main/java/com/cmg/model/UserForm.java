@@ -5,10 +5,9 @@ public class UserForm {
 	private String contact;
 	private String zipcode;
 	private String area; 
-	private String profession;
-	private String ministryOrDept;
-	private String suggestionOrIssueText;
-	private String submissionType;
+	private String supportType;
+	private String supportText;
+	private String status;
 	public String getName() {
 		return name;
 	}
@@ -33,29 +32,23 @@ public class UserForm {
 	public void setArea(String area) {
 		this.area = area;
 	}
-	public String getProfession() {
-		return profession;
+	public String getSupportType() {
+		return supportType;
 	}
-	public void setProfession(String profession) {
-		this.profession = profession;
+	public void setSupportType(String supportType) {
+		this.supportType = supportType;
 	}
-	public String getMinistryOrDept() {
-		return ministryOrDept;
+	public String getSupportText() {
+		return supportText;
 	}
-	public void setMinistryOrDept(String ministryOrDept) {
-		this.ministryOrDept = ministryOrDept;
+	public void setSupportText(String supportText) {
+		this.supportText = supportText;
 	}
-	public String getSuggestionOrIssueText() {
-		return suggestionOrIssueText;
+	public String getStatus() {
+		return status;
 	}
-	public void setSuggestionOrIssueText(String suggestionOrIssueText) {
-		this.suggestionOrIssueText = suggestionOrIssueText;
-	}
-	public String getSubmissionType() {
-		return submissionType;
-	}
-	public void setSubmissionType(String submissionType) {
-		this.submissionType = submissionType;
+	public void setStatus(String status) {
+		this.status = status;
 	}
 	
 	

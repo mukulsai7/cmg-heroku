@@ -28,11 +28,10 @@ public class DataTransactionUtil {
 				fullDetails.setArea(postOfficeList.get(i).getArea());
 				fullDetails.setName(userForm.getName());
 				fullDetails.setContact(userForm.getContact());
-				fullDetails.setProfession(userForm.getProfession());
-				fullDetails.setSubmissionType(userForm.getSubmissionType());
-				fullDetails.setSuggestionOrIssueText(userForm.getSuggestionOrIssueText());
-				fullDetails.setMinistryOrDept(userForm.getMinistryOrDept());
+				fullDetails.setSupportText(userForm.getSupportText());
+				fullDetails.setSupportType(userForm.getSupportType());
 				fullDetails.setZipcode(userForm.getZipcode());
+				fullDetails.setStatus(userForm.getStatus());
 			}
 		}
 		return fullDetails;

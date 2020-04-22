@@ -24,7 +24,7 @@
 					<h3>Community collaboration</h3>
 				</div>
 				<div class="d-flex justify-content-center">
-					<p>Our objective is to provide cooperation at the local level and enable effective utilisation of resources during this pandemic</p>
+					<p>Connecting people who are need and people who can serve</p>
 				</div>
 				<a href="<%=request.getContextPath()%>/form"
 					class="btn btn-primary btn-lg active" id="submitButton"

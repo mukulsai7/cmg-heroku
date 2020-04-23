@@ -68,7 +68,7 @@
 					<td><%=i.getStatus()%></td>
 					<td>
 						<div class="container">
-							<form action="submitStatus" method="post">
+							<form action="submitStatus" id="submitStatus"method="post">
 							 <input type="hidden" id="id" name="id" value=<%=i.getId()%>>
 							<label for="status"></label> <select
 							name="status" id="status" class=""
@@ -78,8 +78,13 @@
 							<option value="ongoing">Ongoing</option>
 							<option value="closed">Closed</option>
 						</select>
+						<% if(i.getStatus().equals("closed")) {%>
 						<button type="submit" id="submit"
-									class="btn btn-secondary btn-sm">Submit status</button>
+									class="btn btn-secondary btn-sm" disabled>Submit status</button>
+									<%}else{ %>
+									<button type="submit" id="submit"
+									class="btn btn-secondary btn-sm" >Submit status</button>
+									<%} %>
 							</form>
 						</div>
 					</td>
@@ -115,7 +120,15 @@ body {
 </style>
 
 <script>
-/* 	function filterGlobal() {
+
+$("#submitStatus").submit(function() {
+    var textareaval = $('#status').val();
+    if(textareaval === "closed"){
+    alert("Do you really want to close this issue");
+    }
+ });
+
+/* function filterGlobal() {
 		$('#example').DataTable().search($('#global_filter').val()).draw();
 	}
 

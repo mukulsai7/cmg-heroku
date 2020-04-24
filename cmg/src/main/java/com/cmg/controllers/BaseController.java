@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.cmg.dao.BasicDAOImplementation;
 import com.cmg.model.FullDetails;
+import com.cmg.model.Login;
 import com.cmg.model.UserForm;
 import com.cmg.model.VolunteerTypeAndState;
 import com.cmg.service.BasicServiceImplementation;
@@ -20,22 +21,22 @@ import com.cmg.util.DataTransactionUtil;
 
 @Controller
 public class BaseController{
-	
+
 	@Autowired 
 	BasicDAOImplementation BasicDaoImplementation; 
-	
+
 	@Autowired
 	BasicServiceImplementation basicServiceImplementation;
-	
+
 	@Autowired
 	DataTransactionUtil dataTransactionUtil; 
-	
+
 	private static VolunteerTypeAndState v;
-	
+
 	static Logger log = Logger.getLogger(BaseController.class.getName());
-	
+
 	List<UserForm> userFormList= null;
-	
+
 	@RequestMapping(value="/submitText", method=RequestMethod.POST)
 	public String submitText(UserForm userForm) throws ParseException{
 		log.info("submitText START");
@@ -43,29 +44,34 @@ public class BaseController{
 		log.info("Full details INFO : "+fullDetails);
 		basicServiceImplementation.setMasterTableData(fullDetails);
 		System.out.println(">>>>>>>>>>>>>>> initial status : "+fullDetails.getStatus());
-	    		return "submitted";
+		return "submitted";
 	} 
-	
+
 	@RequestMapping(value="/form")
 	public String form(){
 		return "form";
 	}
-	
+
 	@RequestMapping(value="/viewIssues")
-	public String viewIssues(ModelMap modelMap){
+	public String viewIssues(ModelMap modelMap,Login login){
 		List<FullDetails> fullDetailsList = basicServiceImplementation.getMasterTableData();
 		modelMap.addAttribute("fullDetailsList", fullDetailsList);
-		return "viewIssues";
+		modelMap.addAttribute("invalidLoginText", "Invalid admin key");
+
+		if(login.getAdminKey().equals("m123"))
+			return "adminViewIssues";
+		else
+			return "index";
 	}
-	
+
 	@RequestMapping(value="/home")
 	public String home(ModelMap modelMap){
 		return "index";
 	}
-	
+
 	@RequestMapping(value="/volunteer")
 	public String volunteer(ModelMap modelMap){
-		
+
 		List<FullDetails> fullDetailsList = basicServiceImplementation.getMasterTableData();
 		List<String> stateList = new ArrayList<String>();
 		for(int i=0;i<fullDetailsList.size();i++){
@@ -75,10 +81,10 @@ public class BaseController{
 			}
 		}
 		modelMap.addAttribute("stateList", stateList);
-		
+
 		return "volunteer";
 	}
-	
+
 	@RequestMapping(value="/next")
 	public String next(VolunteerTypeAndState volunteerTypeAndState, ModelMap modelMap){
 		List<FullDetails> fullDetailsList = basicServiceImplementation.getMasterTableData(volunteerTypeAndState.getState(),volunteerTypeAndState.getVolunteerType());
@@ -94,4 +100,12 @@ public class BaseController{
 		return "viewIssues";
 	}
 	
+	@RequestMapping(value="/submitStatusAdmin")
+	public String submitStatusAdmin(FullDetails fullDetails, ModelMap modelMap){
+		basicServiceImplementation.setStatus(fullDetails.getId(), fullDetails.getStatus());
+		List<FullDetails> fullDetailsList = basicServiceImplementation.getMasterTableData();
+		modelMap.addAttribute("fullDetailsList", fullDetailsList);
+		return "adminViewIssues";
+	}
+
 }

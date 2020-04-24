@@ -31,14 +31,12 @@
 </head>
 <body>
 	<div class="topcorner">
-	<a href="<%=request.getContextPath()%>/volunteer" class="btn btn-link"
-			id="backButton" role="button" aria-pressed="true">Back</a>
 		<a href="<%=request.getContextPath()%>/home" class="btn btn-link"
 			id="homeButton" role="button" aria-pressed="true">Home</a>
 	</div>
 	<div class="table-responsive">
 	<p></p>
-	<h3>List of people who need support</h3>
+	<h2>Admin panel</h2>
 	<p></p>
 		<table id="example" class="table table-bordered table-hover table-sm" style="width: 100%">
 		  <caption>Please change the status only if an action is taken by a volunteer</caption>
@@ -68,7 +66,7 @@
 					<td><%=i.getStatus()%></td>
 					<td>
 						<div class="container">
-							<form action="submitStatus" id="submitStatus"method="post">
+							<form action="submitStatusAdmin" id="submitStatusAdmin"method="post">
 							 <input type="hidden" id="id" name="id" value=<%=i.getId()%>>
 							<label for="status"></label> <select
 							name="status" id="status" class=""
@@ -78,13 +76,8 @@
 							<option value="ongoing">Ongoing</option>
 							<option value="closed">Closed</option>
 						</select>
-						<% if(i.getStatus().equals("closed")) {%>
-						<button type="" id="submitDisabled"
-									class="btn btn-secondary btn-sm" disabled>Contact admin</button>
-									<%}else{ %>
 									<button type="submit" id="submit"
 									class="btn btn-secondary btn-sm" >Submit status</button>
-									<%} %>
 							</form>
 						</div>
 					</td>
@@ -120,12 +113,5 @@ body {
 </style>
 
 <script>
-
-$("#submitStatus").submit(function() {
-    var textareaval = $('#status').val();
-    if(textareaval === "closed"){
-    alert("Do you really want to close this issue");
-    }
- });
 
 </script>

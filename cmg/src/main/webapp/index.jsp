@@ -32,10 +32,10 @@
 					</div>
 
 					<a href="<%=request.getContextPath()%>/form"
-						class="btn btn-warning btn-lg btn-customized" id="submitButton"
+						class="btn btn-primary btn-lg btn-customized" id="submitButton"
 						role="button" aria-pressed="true">I need support</a> <br /> <a
 						href="<%=request.getContextPath()%>/volunteer"
-						class="btn btn-warning btn-lg btn-customized" id="viewButton"
+						class="btn btn-primary btn-lg btn-customized" id="viewButton"
 						role="button" aria-pressed="true">I can volunteer</a>
 
 				</form>
@@ -48,7 +48,7 @@
 						</div>
 						<p></p>
 						<button type="submit" id="admin"
-							class="btn btn-primary btn-customized">Login</button>
+							class="btn btn-primary btn-customized">Login as admin</button>
 					</form>
 					<p></p>
 				</div>

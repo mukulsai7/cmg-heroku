@@ -72,12 +72,6 @@
 </body>
 </html>
 
-
-<script>
-	
-</script>
-
-
 <style type="text/css">
 body {
 	background-image: background-color:;

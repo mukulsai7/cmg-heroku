@@ -3,7 +3,7 @@ applications:
     memory: 850M
     instances: 1
     domain: au-syd.mybluemix.net
-    name: CFC20-essentials
+    name: cmg
     host: null
     disk_quota: 1024M
     buildpacks: java_buildpack

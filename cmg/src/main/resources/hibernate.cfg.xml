@@ -3,12 +3,12 @@
 		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
 		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
-    <session-factory name="HibernateSession">
-        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="hibernate.connection.password">sqlpassword</property>
-        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/cmgdb</property>
-        <property name="hibernate.connection.username">root</property>
-        <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
-        <property name="hibernate.hbm2ddl.auto">update</property>
-    </session-factory>
+	<session-factory name="HibernateSession">
+		<property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+		<property name="hibernate.connection.password">167178b019a31564f78be478f8c7e1218307d11b44fa511ad0066548c18f3b5a</property>
+		<property name="hibernate.connection.url">jdbc:postgresql://ec2-34-225-82-212.compute-1.amazonaws.com:5432/dekcamg1bjbtln</property>
+		<property name="hibernate.connection.username">qrykiclcjvtewn</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+		<property name="hibernate.hbm2ddl.auto">create</property>
+	</session-factory>
 </hibernate-configuration>

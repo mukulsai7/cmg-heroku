@@ -29,7 +29,7 @@
 							<h3>Community collaboration</h3>
 						</div>
 						<div class="d-flex justify-content-center">
-							<p>Connecting people who are need and people who can serve</p>
+							<p>Connecting people who are in need and people who can serve</p>
 						</div>
 
 						<a href="<%=request.getContextPath()%>/form"
@@ -79,6 +79,7 @@
 
 <style type="text/css">
 body {
+	background-image: background-image: url("https://www.publicdomainpictures.net/pictures/30000/velka/plain-white-background.jpg");
 	background-image: background-color:;
 }
 

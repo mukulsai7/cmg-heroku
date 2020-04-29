@@ -20,45 +20,49 @@
 <body>
 
 	<div class="container h-100">
-		<div class="row h-100 justify-content-center align-items-center">
-
-			<div class="col-10 col-md-8 col-lg-6">
-				<form class="form-group col" action="" method="post">
-					<div class="d-flex justify-content-center">
-						<h3>Community collaboration</h3>
-					</div>
-					<div class="d-flex justify-content-center">
-						<p>Connecting people who are need and people who can serve</p>
-					</div>
-
-					<a href="<%=request.getContextPath()%>/form"
-						class="btn btn-primary btn-lg btn-customized" id="submitButton"
-						role="button" aria-pressed="true">I need support</a> <br /> <a
-						href="<%=request.getContextPath()%>/volunteer"
-						class="btn btn-primary btn-lg btn-customized" id="viewButton"
-						role="button" aria-pressed="true">I can volunteer</a>
-
-				</form>
-
-				<div id="adminKeyForm" class="d-flex justify-content-center">
-					<form action="viewIssues">
-						<div class="col-xs-4" id="adminKey">
-							<input class="form-control" id="adminKey" name="adminKey"
-								id="ex2" type="password" placeholder="Admin key">
+		<div class="row">
+			<div class="row h-100 justify-content-center align-items-center">
+				<div class="col-10 col-md-8 col-lg-6">
+					<form class="form-group col" action="" method="post">
+						<div class="d-flex justify-content-center">
+							<h3>Community collaboration</h3>
 						</div>
-						<p></p>
-						<button type="submit" id="admin"
-							class="btn btn-primary btn-customized">Login as admin</button>
+						<div class="d-flex justify-content-center">
+							<p>Connecting people who are in need and people who can serve</p>
+						</div>
+
+						<a href="<%=request.getContextPath()%>/form"
+							class="btn btn-primary btn-lg btn-customized" id="submitButton"
+							role="button" aria-pressed="true">I need support</a> <br /> <a
+							href="<%=request.getContextPath()%>/volunteer"
+							class="btn btn-primary btn-lg btn-customized" id="viewButton"
+							role="button" aria-pressed="true">I can volunteer</a>
+
 					</form>
-					<p></p>
+
+					<div id="adminKeyForm" class="d-flex justify-content-center">
+						<form action="viewIssues">
+							<div class="col-xs-4" id="adminKey">
+								<input class="form-control" id="adminKey" name="adminKey"
+									id="ex2" type="password" placeholder="Admin key">
+							</div>
+							<p></p>
+							<button type="submit" id="admin"
+								class="btn btn-primary btn-customized">Login as admin</button>
+						</form>
+						<p></p>
+					</div>
+					<div class="col-md-6">
+						<p>
+							Admin contact : <a href="mailto:mukulsai7@gmail.com">mukulsai7@gmail.com</a>
+						</p>
+					</div>
 				</div>
 
 			</div>
 
 		</div>
-
 	</div>
-
 </body>
 </html>
 
@@ -70,7 +74,8 @@
 
 <style type="text/css">
 body {
-	background-image: background-color:;
+	background-image: background-image: url("https://www.publicdomainpictures.net/pictures/30000/velka/plain-white-background.jpg");
+	background-color:;
 }
 
 #submitButton {

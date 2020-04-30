@@ -18,11 +18,13 @@
 </head>
 
 <body>
-	<div class="container h-100">
-		<div class="row h-100 justify-content-center align-items-center">
-			<div class="col-10 col-md-8 col-lg-6">
+  <div class="jumbotron">
+        <div class="">
+	<div class="container">
+		<div class="row justify-content-center align-items-center">
+			<div class="col-xs-12">
 				<!-- Form -->
-				<form class="form-example" action="submitText" method="post">
+				<form class="col-md-auto" action="submitText" method="post">
 					<h1>Covid 19 support form</h1>
 					<p class="description">A volunteer may help the person(s)
 						mentioned in this form</p>
@@ -82,6 +84,9 @@
 			</div>
 		</div>
 	</div>
+	</div>
+	</div>
+
 
 </body>
 

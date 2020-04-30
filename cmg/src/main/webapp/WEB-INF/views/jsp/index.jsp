@@ -18,101 +18,55 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
+	<div class="jumbotron jumbotron-fluid">
+		<div class="text-center">
+			<h4 class="display-5">Community collaboration</h4>
 
-	<div class="container h-100">
-		<div class="row">
-			<div class="row h-100 justify-content-center align-items-center">
+			<p>Connecting people who are in need and people who can serve</p>
+			<a href="<%=request.getContextPath()%>/form"
+				class="btn btn-primary btn-lg btn-customized" id="submitButton"
+				role="button" aria-pressed="true">I need support</a>
+			<p></p>
+			<a href="<%=request.getContextPath()%>/volunteer"
+				class="btn btn-primary btn-lg btn-customized" id="viewButton"
+				role="button" aria-pressed="true">I can volunteer</a>
+			<p></p>
 
-				<div class="col-10 col-md-8 col-lg-6">
-					<form class="form-group col" action="" method="post">
-						<div class="d-flex justify-content-center">
-							<h3>Community collaboration</h3>
-						</div>
-						<div class="d-flex justify-content-center">
-							<p>Connecting people who are in need and people who can serve</p>
-						</div>
-
-						<a href="<%=request.getContextPath()%>/form"
-							class="btn btn-primary btn-lg btn-customized" id="submitButton"
-							role="button" aria-pressed="true">I need support</a> <br /> <a
-							href="<%=request.getContextPath()%>/volunteer"
-							class="btn btn-primary btn-lg btn-customized" id="viewButton"
-							role="button" aria-pressed="true">I can volunteer</a>
-
-					</form>
-
-					<div id="adminKeyForm" class="d-flex justify-content-center">
-						<form action="viewIssues">
-							<div class="col-xs-4" id="adminKey">
-								<input class="form-control" id="adminKey" name="adminKey"
-									id="ex2" type="password" placeholder="Admin key">
-							</div>
-							<p></p>
-							<button type="submit" id="admin"
-								class="btn btn-primary btn-customized">Login as admin</button>
-							<%
+			<!-- <div id="adminKeyForm" class="> -->
+			<form action="viewIssues">
+				<div class="col-lg-2 col-xs-12 col-sm-12 col-centered" id="adminKey">
+					<input class="form-control" id="adminKey" name="adminKey" id=""
+						type="password" placeholder="Admin key" width="48">
+				</div>
+				<p></p>
+				<button type="submit" id="admin"
+					class="btn btn-primary btn-customized">Login as admin</button>
+				<%
 								if (request.getAttribute("invalidLoginText") != null) {
 							%>
-							<p>
-								<%=request.getAttribute("invalidLoginText")%>
-							</p>
+				<p>
+					<%=request.getAttribute("invalidLoginText")%>
+				</p>
 
-							<%
+				<%
 								}
 							%>
-						</form>
-					</div>
-					<div class="col-md-6">
-						<p>
-							Admin contact : <a href="mailto:mukulsai7@gmail.com">mukulsai7@gmail.com</a>
-						</p>
-					</div>
-
-				</div>
-
+			</form>
+			<p></p>
+			<!-- </div> -->
+			<div class="col-lg-6 col-md-6 col-centered">
+				<p>
+					Admin contact : <a href="mailto:mukulsai7@gmail.com">mukulsai7@gmail.com</a>
+				</p>
 			</div>
 		</div>
-	</div>
 
+	</div>
 </body>
 </html>
-
-<style type="text/css">
-body {
-	background-image: background-image: url("https://www.publicdomainpictures.net/pictures/30000/velka/plain-white-background.jpg");
-	background-image: background-color:;
-}
-
-#submitButton {
-	width: 270px;
-	text-align: center;
-	margin: auto;
-	display: block;
-}
-
-#viewButton {
-	width: 270px;
-	text-align: center;
-	margin: auto;
-	display: block;
-}
-
-.centered {
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	margin-top: 130px;
-	transform: translate(-50%, -50%);
-}
-
-/* #admin {
-	padding: 8px 16px;
-	left: 60px;
-} */
-#adminKey {
-	width: 270px;
+<style>
+    .col-centered{
+    margin: 0 auto;
+    float: none;
 }
 </style>
-
-
-

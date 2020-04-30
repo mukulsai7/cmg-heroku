@@ -26,7 +26,7 @@
                 <div class="row h-100 justify-content-center align-items-center">
                     <div class="col-10 col-md-8 col-lg-6">
                         <form class="form-example" action="next" method="post">
-                            <h4>Please select volunteer type and location</h4>
+                            <h5>Please select volunteer type and location</h5>
                                 <label for="volunteerType">Select volunteer type</label> <select name="volunteerType"
                                     id="volunteerType" class="form-control radio" required>
                                     <option value="">Choose...</option>

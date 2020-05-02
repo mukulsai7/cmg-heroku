@@ -58,6 +58,14 @@
 				<p>
 					Admin contact : <a href="mailto:mukulsai7@gmail.com">mukulsai7@gmail.com</a>
 				</p>
+				<p>
+				There is a growing interest in enabling communities to cooperate
+				among themselves to solve problems in times of crisis. This
+				application helps volunteers to identify the areas where
+				people are not receiving any help/resources. And people who need support
+				can fill in their details or others can fill the form, when they
+				identify people who are not receiving any help/resources
+				</p>
 			</div>
 		</div>
 

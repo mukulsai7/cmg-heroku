@@ -41,7 +41,7 @@
 	<h3>List of people who need support</h3>
 	<p></p>
 		<table id="example" class="table table-bordered table-hover table-sm" style="width: 100%">
-		  <caption>Please change the status only if an action is taken by a volunteer</caption>
+		  <caption>Please change the status only if an action is taken by a volunteer.Reach admin to reopen any issues</caption>
 			<thead class="thead-dark">
 				<tr>
 					<th>City</th>

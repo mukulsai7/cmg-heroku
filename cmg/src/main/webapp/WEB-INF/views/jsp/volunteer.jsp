@@ -63,6 +63,7 @@
                             <a href="<%=request.getContextPath()%>/home" class="btn btn-outline-secondary"
                                 id="homeButton" role="button" aria-pressed="true">Home</a>
                         </form>
+                        <p>Note : If nobody gave any support details in your state, you might not see that state in drop down</p>
                     </div>
                 </div>
             </div>
